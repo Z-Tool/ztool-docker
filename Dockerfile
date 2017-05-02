@@ -14,7 +14,7 @@ RUN apt-get update && \
     pip install -U pip setuptools && \
     rm -rf /var/lib/apt/lists/*
 
-ADD ./jalpc-docker.ini /tmp/jalpc-docker.ini
-ADD ./requirements.txt /tmp/requirements.txt
+ADD ./ztool-backhend-mongo/jalpc-docker.ini /tmp/jalpc-docker.ini
+ADD ./ztool-backhend-mongo/requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 CMD uwsgi /tmp/jalpc-docker.ini

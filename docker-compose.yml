@@ -10,7 +10,7 @@ services:
   flask:
     build: .
     volumes:
-      - /jalpc:/jalpc
+      - /jalpc/ztool-backhend-mongo:/jalpc
     depends_on:
       - mongo
     env_file:
@@ -25,7 +25,7 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - /jalpc/nginx:/etc/nginx:ro
-      - /usr/share/nginx/html:/usr/share/nginx/html:ro
+      - /jalpc/ztool-frontend/dist:/usr/share/nginx/html:ro
       - /usr/share/nginx/jack003:/usr/share/nginx/jack003:ro
     depends_on:
       - flask

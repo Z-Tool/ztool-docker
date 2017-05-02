@@ -1,0 +1,6 @@
+[submodule "ztool-backhend-mongo"]
+	path = ztool-backhend-mongo
+	url = git@github.com:Z-Tool/ztool-backhend-mongo.git
+[submodule "ztool-frontend"]
+	path = ztool-frontend
+	url = git@github.com:Z-Tool/ztool-frontend.git
