@@ -11,7 +11,7 @@ from fabric.contrib.project import rsync_project
 
 code_dir = '/jalpc'
 html_dir = '/usr/share/nginx/html'
-exclude = ('.DS_Store', '*pyc', '.git', '.idea', '*sqlite3', 'migrations', 'node_modules')
+exclude = ('.DS_Store', '*pyc', '.git', '.idea', '*sqlite3', 'migrations', 'node_modules', 'readme_files')
 
 env.roledefs = {
     'vps': ['root@vps.jarrekk.com']
