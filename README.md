@@ -16,5 +16,5 @@
 
 #### depends on
 
-* ztool-backhend-mongo
-* ztool-frontend
+* [ztool-backhend-mongo](https://github.com/Z-Tool/ztool-backhend-mongo)
+* [ztool-frontend](https://github.com/Z-Tool/ztool-frontend)
