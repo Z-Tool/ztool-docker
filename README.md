@@ -2,6 +2,8 @@
 
 ## System architecture diagram
 
+All services are on a vultr vps server. I use one docker container for each service. And about reference code(python code and frontend code), I use git submodule to connect them.
+
 ![diagram](readme_files/diagram.png)
 
 ## Docker-compose
