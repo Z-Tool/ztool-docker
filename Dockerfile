@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM python:3.6.1
 
 MAINTAINER Jarrekk me@jarrekk.com
 
@@ -6,11 +6,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
     git \
-    python \
-    python-dev \
-    python-setuptools \
-    python-pip \
-    uwsgi-plugin-python && \
+    apt-utils && \
     pip install -U pip setuptools && \
     rm -rf /var/lib/apt/lists/*
 
