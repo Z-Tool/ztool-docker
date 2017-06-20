@@ -9,19 +9,30 @@ services:
       - /data/mongodb:/data/db:rw
       - /jalpc/configdb:/data/configdb:rw
 
-  # redis:
-  #   image: redis
-  #   command: redis-server --appendonly yes
-  #   volumes:
-  #     - /data/redis:/data:rw
+  redis:
+    image: redis
+    command: redis-server --appendonly yes
+    volumes:
+      - /data/redis:/data:rw
 
   flask:
     build: .
     volumes:
       - /jalpc/ztool-backhend-mongo:/jalpc
-    depends_on:
+    links:
       - mongo
-      # - redis
+      - redis
+    env_file:
+      - ./.env
+
+  celery:
+    build:
+      context: .
+      dockerfile: celery.dockerfile
+    volumes:
+      - /jalpc/ztool-backhend-mongo:/jalpc
+    links:
+      - redis
     env_file:
       - ./.env
 
@@ -36,5 +47,5 @@ services:
       - /jalpc/nginx:/etc/nginx:ro
       - /jalpc/ztool-frontend/dist:/usr/share/nginx/html:ro
       - /usr/share/nginx/jack003:/usr/share/nginx/jack003:ro
-    depends_on:
+    links:
       - flask

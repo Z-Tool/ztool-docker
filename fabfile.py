@@ -55,9 +55,15 @@ def flask():
     with cd(code_dir):
         run('docker-compose restart flask')
 
-
 @roles('vps')
 def rebuild():
+    rsync_project(local_dir='.', remote_dir=code_dir, exclude=exclude)
+    with cd(code_dir):
+        run('docker-compose down ; docker-compose build')
+
+
+@roles('vps')
+def rebuild_all():
     local('cd ztool-frontend && npm install ; npm run build ; cd -')
     rsync_project(local_dir='.', remote_dir=code_dir, exclude=exclude)
     with cd(code_dir):

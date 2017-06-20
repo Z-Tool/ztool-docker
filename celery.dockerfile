@@ -14,4 +14,4 @@ ADD ./ztool-backhend-mongo/jalpc-docker.ini /tmp/jalpc-docker.ini
 ADD ./ztool-backhend-mongo/requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 WORKDIR /jalpc
-CMD uwsgi /tmp/jalpc-docker.ini
+CMD celery worker -l info -A celery_worker.celery -B
