@@ -1,0 +1,11 @@
+sudo: required
+language: python
+python:
+- 3.6
+before_script:
+  - mkdir ~/.ssh && chmod 600 ~/.ssh
+  - echo $ID_RSA > ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
+  - pip install Fabric3
+script: fab rebuild && fab up
+notifications:
+  email: me@jarrekk.com
