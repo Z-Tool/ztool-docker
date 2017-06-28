@@ -1,5 +1,3 @@
-# ztool-docker
-
 ## System architecture diagram
 
 All services are on a vultr vps server. I use one docker container for each service. And about reference code(python code and frontend code), I use git submodule to connect them.
@@ -18,8 +16,8 @@ All services are on a vultr vps server. I use one docker container for each serv
 
 #### depends on
 
-* [ztool-backhend-mongo](https://github.com/Z-Tool/ztool-backhend-mongo)
-* [ztool-frontend](https://github.com/Z-Tool/ztool-frontend)
+* [ztool-backhend-mongo](https://gitlab.com/jarrekk/ztool-backhend-mongo)
+* [ztool-frontend](https://gitlab.com/jarrekk/ztool-frontend)
 
 ## Data Backup
 
